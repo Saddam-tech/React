@@ -28,9 +28,9 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I am a React App!</h1>
         <button onClick = {this.switchNameHandler}>Switch name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].name}>My hobbie is: Racing</Person>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].name}>I am a great guy!</Person>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].name}>I am a great lady</Person>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}>My hobbie is: Racing</Person>
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>I am a great guy!</Person>
+        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>I am a great lady</Person>
       </div>
     );
     // return React.createElement ("h1", {className: "App"}, "");
