@@ -38,7 +38,7 @@ class App extends Component {
 
   render() {  
     return (
-      <div>
+      <div className="App">
         <h1>Hey Buddies</h1>
         <button onClick={() => this.switchNameHandler('Maximilian!!!')}>Switch Name</button>
         <Person
