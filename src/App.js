@@ -49,7 +49,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hey Buddies</h1>
-        <button className="newStyle"onClick={() => this.switchNameHandler('Maximilian!!!')}>Switch Name</button>
+        <button style={style} onClick={() => this.switchNameHandler('Maximilian!!!')}>Switch Name</button>
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
