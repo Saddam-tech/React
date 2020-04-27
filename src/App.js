@@ -5,40 +5,43 @@ import Person from "./Person/Person";
 class App extends Component {
   state = {
     persons: [
-      { id: "wewe", name: "Max", age: "27" },
-      { id: "rwrw", name: "Manu", age: "28" },
-      { id: "tttg", name: "Stephanie", age: "29" },
-      { id: "tttgff", name: "Stepha", age: "24" },
+      { id: "wewe11", name: "Max", age: "27" },
+      { id: "rwrw22", name: "Manu", age: "28" },
+      { id: "tttg33", name: "Stephanie", age: "29" },
+      { id: "tttgff44", name: "Stepha", age: "24" },
     ],
     showPersons: false,
   };
+
+  
 
    
 
   onChangeHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex((p) => {
-      p.id === id
+      return p.id === id;
     });
 
     const person = {
       ...this.state.persons[personIndex]
     };
 
+    // An alternative way for the spread operator:
+    // const person = Object.assign({}, this.state.persons[personIndex]);
+
     person.name = event.target.value;
-    
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
 
 
 
 
 
-    this.setState({
-      persons: [
-        { name: event.target.value, age: "27" },
-        { name: "Manu shi", age: "28" },
-        { name: "Stephanie shi", age: "29" },
-      ],
-    });
-  };
+    this.setState( {persons: persons} );
+  }
+  
+  
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState({ showPersons: !doesShow });
