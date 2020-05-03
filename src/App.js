@@ -33,6 +33,7 @@ class App extends Component {
 
     const persons = [...this.state.persons];
     persons[personIndex] = person;
+    
 
 
 
@@ -57,7 +58,8 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: "white",
+      backgroundColor: "green",
+      color: "white",
       cursor: "pointer",
       font: "inherit",
       border: "1px solid blue",
@@ -66,6 +68,12 @@ class App extends Component {
 
     let persons = null;
 
+    
+    
+    
+    
+    
+    
     if (this.state.showPersons) {
       persons = (
         <div>
@@ -82,6 +90,7 @@ class App extends Component {
           })}
         </div>
       );
+      style.backgroundColor= "red";
     }
 
     return (
