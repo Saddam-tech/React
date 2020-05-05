@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
-import Radium from "radium";
+import Radium, { StyleRoot } from "radium";
 
 class App extends Component {
   state = {
@@ -14,17 +14,13 @@ class App extends Component {
     showPersons: false,
   };
 
-  
-
-   
-
   onChangeHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex((p) => {
       return p.id === id;
     });
 
     const person = {
-      ...this.state.persons[personIndex]
+      ...this.state.persons[personIndex],
     };
 
     // An alternative way for the spread operator:
@@ -34,16 +30,10 @@ class App extends Component {
 
     const persons = [...this.state.persons];
     persons[personIndex] = person;
-    
 
+    this.setState({ persons: persons });
+  };
 
-
-
-
-    this.setState( {persons: persons} );
-  }
-  
-  
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState({ showPersons: !doesShow });
@@ -66,26 +56,16 @@ class App extends Component {
       border: "1px solid blue",
       padding: "8px",
 
-      ':hover': {
+      ":hover": {
         backgroundColor: "lightgreen",
         color: "black",
-        borderRadius: '2em',
-        transitionDuration: '0.9s',
-      }
-    
-    
-    
-    
+        borderRadius: "2em",
+        transitionDuration: "0.9s",
+      },
     };
 
     let persons = null;
 
-    
-    
-    
-    
-    
-    
     if (this.state.showPersons) {
       persons = (
         <div>
@@ -101,39 +81,38 @@ class App extends Component {
             );
           })}
         </div>
-      ); 
-      style.backgroundColor= "red";
-      style[':hover'] = {
-        backgroundColor: 'pink',
-        color: 'black',
-        borderRadius: '2em',
-        transitionDuration: '0.9s',
-      }
-    };
-
-    const classes = [];
-    
-    if (this.state.persons.length <= 2) {
-      classes.push('red'); //classes = ['red']
-    };
-
-    if (this.state.persons.length <= 1) {
-      classes.push('bold');
+      );
+      style.backgroundColor = "red";
+      style[":hover"] = {
+        backgroundColor: "salmon",
+        color: "black",
+        borderRadius: "2em",
+        transitionDuration: "0.9s",
+      };
     }
 
+    const classes = [];
 
-    
+    if (this.state.persons.length <= 2) {
+      classes.push("red"); //classes = ['red']
+    }
+
+    if (this.state.persons.length <= 1) {
+      classes.push("bold");
+    }
 
     return (
-      <div className="App">
-        <h1>Hey Buddies</h1>
-        <p className={classes.join(' ')}>This is really working!</p>
-        <button style={style} onClick={this.togglePersonsHandler}>
-          Toggle persons
-        </button>
+      <StyleRoot>
+        <div className="App">
+          <h1>Hey Buddies</h1>
+          <p className={classes.join(" ")}>This is really working!</p>
+          <button style={style} onClick={this.togglePersonsHandler}>
+            Toggle persons
+          </button>
 
-        {persons}
-      </div>
+          {persons}
+        </div>
+      </StyleRoot>
     );
   }
 }
