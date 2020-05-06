@@ -9,13 +9,6 @@ const StyledDiv = styled.div`
       box-shadow: 0 2px 3px gray;
       padding: 16px;
       text-align: center;
- 
-       background-color: white;
-       border: 1px solid blue ;
-       font: inherit;
-       padding: 8px;
-       cursor: pointer;
- 
   
     "@media (min-width: 500px)": {
       width: "450px",
@@ -23,21 +16,17 @@ const StyledDiv = styled.div`
 `;
 
 const person = (props) => {
-  const style = {
-    "@media (min-width: 500px)": {
-      width: "450px",
-    },
-  };
-
   return (
-    <div className="Person" style={style}>
+    // <div className="Person" style={style}>
+    <StyledDiv>
       <p onClick={props.click}>
         I am {props.name} and I am {props.age} years old! I like playing{" "}
         {props.hobby}!
       </p>
       <p>{props.children}</p>
       <input type="text" onChange={props.changed} value={props.name} />
-    </div>
+    </StyledDiv>
+  
   );
 };
 

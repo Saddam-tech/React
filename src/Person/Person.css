@@ -1,4 +1,4 @@
-/* .Person {
+ .Person {
     width: 60%;
     margin: 16px auto;
     border: 1px solid #ccc;
@@ -7,14 +7,11 @@
     text-align: center;
 }
 
-.newStyle {
-     background-color: white;
-     border: 1px solid blue ;
-     font: inherit;
-     padding: 8px;
-     cursor: pointer;
-}
+ 
+ 
 
-"@media (min-width: 500px)": {
-    width: "450px",
-  }, */
+ @media (min-width: 500px) {
+     .Person {
+         width: 450px;
+     }
+ }

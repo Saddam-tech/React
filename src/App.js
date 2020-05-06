@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
+// npm 
 import Person from "./Person/Person";
+
+ 
 
 class App extends Component {
   state = {
@@ -104,7 +106,7 @@ class App extends Component {
       <div className="App">
         <h1>Hey Buddies</h1>
         <p className={classes.join(" ")}>This is really working!</p>
-        <button style={style} onClick={this.togglePersonsHandler}>
+        <button className="button" onClick={this.togglePersonsHandler}>
           Toggle persons
         </button>
 
