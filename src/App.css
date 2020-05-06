@@ -10,8 +10,7 @@
   font-weight: bold;
 }
 
-.button {
-
+.Button {
   background-color: green;
   color: white;
   cursor: pointer;
@@ -20,9 +19,17 @@
   padding: 8px;
 }
 
-  .button:hover {
+  .Button:hover {
     background-color: lightgreen;
     color: black;
     border-radius: 2em;
     transition-duration: 0.9s;
-  };
+  }
+
+  .Button.Red {
+    background-color: red;
+  }
+
+  .Button.Red:hover {
+    background-color: salmon;
+  }
