@@ -3,13 +3,11 @@ import classes from "./Person.css";
 // import styled from "styled-components";
 
 const person = (props) => {
-  const rdn = Math.random();
+  // const rdn = Math.random();
 
-  if ( rdn > 0.7 ) {
-    return new Error('Something went wrong');
-  }
-  
-  
+  // if ( rdn > 0.7 ) {
+  //   return new Error('Something went wrong');
+  // }
   
   return (
     // <div className="Person" style={style}>
