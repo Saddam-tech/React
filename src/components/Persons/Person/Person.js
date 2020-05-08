@@ -3,6 +3,7 @@ import classes from "./Person.css";
 // import styled from "styled-components";
 
 const person = (props) => {
+  console.log('[Person.js] rendering ...');
   // const rdn = Math.random();
 
   // if ( rdn > 0.7 ) {
