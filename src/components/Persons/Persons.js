@@ -7,6 +7,10 @@ class Persons extends Component {
   //   return state;
   // }
 
+  // componentWillReceiveProps(props) {
+  //   console.log('[Person.js] shouldComponentUpdate', props);
+  // }
+  
   shouldComponentUpdate(nextProps, nextState) {
     console.log('[Persons.js] shouldComponentUpdate');
     return true;
@@ -14,11 +18,17 @@ class Persons extends Component {
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log('[Person.js] getSnapshotBeforeUpdate');
-    return null;
+    return { message: 'Snapshot!' };
   }
 
-  componentDidUpdate() {
+  // componentWillUpdate() {
+
+  // } 
+
+  componentDidUpdate(prevProps,  prevState, snapshot) {
     console.log('[Person.js] componentDidUpdate');
+    console.log(snapshot);  
+     
   }
   
   render() {
