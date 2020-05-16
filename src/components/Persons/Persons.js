@@ -10,7 +10,7 @@ class Persons extends PureComponent {
   // componentWillReceiveProps(props) {
   //   console.log('[Person.js] shouldComponentUpdate', props);
   // }
-  
+
   // shouldComponentUpdate(nextProps, nextState) {
   //   console.log('[Persons.js] shouldComponentUpdate');
   //   if (nextProps.persons !== this.props.persons ||
@@ -23,35 +23,34 @@ class Persons extends PureComponent {
   // }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    console.log('[Person.js] getSnapshotBeforeUpdate');
-    return { message: 'Snapshot!' };
+    console.log("[Person.js] getSnapshotBeforeUpdate");
+    return { message: "Snapshot!" };
   }
 
   // componentWillUpdate() {
 
-  // } 
+  // }
 
-  componentDidUpdate(prevProps,  prevState, snapshot) {
-    console.log('[Person.js] componentDidUpdate');
-    console.log(snapshot);  
-     
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log("[Person.js] componentDidUpdate");
+    console.log(snapshot);
   }
-  
+
   render() {
-    console.log('[Persons.js] rendering ...');
+    console.log("[Persons.js] rendering ...");
 
-return this.props.persons.map((person, index) => {
-    return (
-      <Person
-        name={person.name}
-        age={person.age}
-        click={() => this.props.clicked(index)}
-        key={person.id}
-        changed={(event) => this.props.changed(event, person.id)}
-      />
-    ) } ) } ;
+    return this.props.persons.map((person, index) => {
+      return (
+        <Person
+          name={person.name}
+          age={person.age}
+          click={() => this.props.clicked(index)}
+          key={person.id}
+          changed={(event) => this.props.changed(event, person.id)}
+        />
+      );
+    });
+  }
+}
 
-  };
-
-
-    export default Persons;
+export default Persons;
