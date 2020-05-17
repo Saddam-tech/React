@@ -14,14 +14,15 @@ class App extends Component {
 
   state = {
     persons: [
-      { id: "wewe11", name: "Max", age: "27" },
-      { id: "rwrw22", name: "Manu", age: "28" },
-      { id: "tttg33", name: "Stephanie", age: "29" },
-      { id: "tttgff44", name: "Stepha", age: "24" },
+      { id: "wewe11", name: "Max", age: 27 },
+      { id: "rwrw22", name: "Manu", age: 28 },
+      { id: "tttg33", name: "Stephanie", age: 29 },
+      { id: "tttgff44", name: "Stepha", age: 24 },
     ],
     showPersons: false,
     showCockpit: true,
     changeCounter: 0,
+    authenticated: false,
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -44,6 +45,11 @@ class App extends Component {
   componentDidMount() {
     console.log("[App.js] componentDidMount");
   }
+
+  loginHandler = () => {
+    this.setState({authenticated: true});
+
+  };
 
   onChangeHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex((p) => {
@@ -96,6 +102,7 @@ class App extends Component {
       persons = (
         <div>
           <Persons
+            isAuthenticated={this.state.authenticated}
             persons={this.state.persons}
             clicked={this.deletePersonsHandler}
             changed={this.onChangeHandler}
@@ -130,6 +137,7 @@ class App extends Component {
             showPersons={this.state.showPersons}
             personsLength={this.state.persons.length}
             toggle={this.togglePersonsHandler}
+            login={this.loginHandler}
           />
         ) : null}
         {persons}
