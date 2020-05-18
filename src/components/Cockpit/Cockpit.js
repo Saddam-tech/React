@@ -2,11 +2,8 @@ import React, { useEffect, useRef } from "react";
 import classes from "./Cockpit.css";
 
 const cockpit = (props) => {
- const toggleBtnRef = useRef(null);
-  
- 
- 
- 
+  const toggleBtnRef = useRef(null);
+
   useEffect(() => {
     console.log("[Cockpit.js] useEffect");
     //http request...
